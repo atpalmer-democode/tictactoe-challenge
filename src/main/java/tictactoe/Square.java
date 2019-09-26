@@ -1,3 +1,5 @@
+package tictactoe;
+
 import java.io.Serializable;
 
 public class Square implements Serializable {

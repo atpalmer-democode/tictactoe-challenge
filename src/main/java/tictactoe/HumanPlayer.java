@@ -1,3 +1,5 @@
+package tictactoe;
+
 import java.util.Objects;
 
 public class HumanPlayer implements Player {

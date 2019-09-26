@@ -1,3 +1,4 @@
+package tictactoe;
 
 public interface Player {
     Mark mark();
