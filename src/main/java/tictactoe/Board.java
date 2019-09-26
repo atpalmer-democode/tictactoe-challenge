@@ -45,14 +45,14 @@ public class Board {
     }
 
     public static int ensureValidRow(int row) {
-        if(row < ROW_MIN || row > ROW_MAX) {
+        if (row < ROW_MIN || row > ROW_MAX) {
             throw new IllegalArgumentException("row coordinate must be 1, 2, or 3");
         }
         return row;
     }
 
     public static int ensureValidColumn(int column) {
-        if(column < COL_MIN || column > COL_MAX) {
+        if (column < COL_MIN || column > COL_MAX) {
             throw new IllegalArgumentException("column coordinate must be 1, 2, or 3");
         }
         return column;

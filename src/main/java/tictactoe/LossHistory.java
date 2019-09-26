@@ -50,7 +50,7 @@ public class LossHistory implements Serializable {
         ListIterator<Square> iter = moveSequence.listIterator();
         HistoryNode furthestNode = findLast(iter);
 
-        if(iter.hasNext()) {
+        if (iter.hasNext()) {
             // we have moves played that have never lost
             return false;
         }
