@@ -29,10 +29,10 @@ public class ComputerPlayer implements Player {
         while (true) {
             Square choice = this.randomSquare(squares);
             List<Square> hypotheticalLine = hypotheticalLine(board.history(), choice);
-            if (!this._lossHistory.hasSequence(hypotheticalLine)) {
+            if (!this._lossHistory.isLost(hypotheticalLine)) {
                 return choice;
             }
-            squares.remove(choice);
+            squares.remove(choice); // don't try a losing square again
         }
     }
 

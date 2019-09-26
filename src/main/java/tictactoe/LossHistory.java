@@ -20,6 +20,13 @@ public class LossHistory implements Serializable {
             this._children.put(square, result);
             return result;
         }
+
+        private int height() {
+            return 1 + this._children.values().stream()
+                .mapToInt(x -> x.height())
+                .max()
+                .orElse(0);
+        }
     }
 
     private final HistoryNode lossHistoryTree = new HistoryNode();
@@ -38,12 +45,18 @@ public class LossHistory implements Serializable {
         return currentNode;
     }
 
-    public boolean hasSequence(List<Square> moveSequence) {
+    public boolean isLost(List<Square> moveSequence) {
         Objects.requireNonNull(moveSequence);
         ListIterator<Square> iter = moveSequence.listIterator();
-        findLast(iter);
-        boolean hasMoreMoves = iter.hasNext();
-        return !hasMoreMoves;
+        HistoryNode furthestNode = findLast(iter);
+
+        if(iter.hasNext()) {
+            // we have moves played that have never lost
+            return false;
+        }
+
+        // If the last move in our moveSequence is the 2nd to last move in a losing sequence, it's a losing move
+        return furthestNode.height() == 2;
     }
 
     public void addLoss(List<Square> moveSequence) {
