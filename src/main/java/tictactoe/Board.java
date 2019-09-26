@@ -8,7 +8,7 @@ public class Board {
     public static final int COL_MIN = 1;
     public static final int COL_MAX = 3;
 
-    private static transient final int[][][] winPatterns = {
+    private static final int[][][] winPatterns = {
         // across
         {{1, 1}, {1, 2}, {1, 3}},
         {{2, 1}, {2, 2}, {2, 3}},
