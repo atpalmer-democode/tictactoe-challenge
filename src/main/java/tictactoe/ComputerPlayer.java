@@ -8,9 +8,9 @@ public class ComputerPlayer implements Player {
     private final Random _random;
 
     public ComputerPlayer(Mark mark, LossHistory lossHistory, Random random) {
-        this._mark = mark;
-        this._lossHistory = lossHistory;
-        this._random = random;
+        this._mark = Objects.requireNonNull(mark);
+        this._lossHistory = Objects.requireNonNull(lossHistory);
+        this._random = Objects.requireNonNull(random);
     }
 
     public ComputerPlayer(Mark mark, LossHistory lossHistory) {

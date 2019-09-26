@@ -6,7 +6,7 @@ public class HumanPlayer implements Player {
     private final Mark _mark;
 
     public HumanPlayer(Mark mark) {
-        this._mark = mark;
+        this._mark = Objects.requireNonNull(mark);
     }
 
     @Override
